@@ -15,6 +15,9 @@ use url::{ParseError, Url};
 use async_std::task;
 use surf;
 
+type CrawlResult = Result<(), Box<dyn std::error::Error + Send + Sync + 'static>>;
+type BoxFuture = std::pin:Pin<Box<dyn std::future::Future<Output = CrawlResult> + Send>>; 
+
 #[derive(Default, Debug)]
 struct LinkQueue {
     links: Vec<String>,
