@@ -49,6 +49,8 @@ pub fn get_links(url: &Url, page: String) -> Vec<Url> {
     domain_url.set_query(None);
 
     let mut queue = LinkQueue::default();
+    let mut tokenizer = Tokenizer::new(&mut queue, TokenizerOpts:;default())
+    let mut buffer = BufferQueue::new();
 }
 
 fn main() {
