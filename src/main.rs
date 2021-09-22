@@ -23,6 +23,7 @@ struct LinkQueue {
 impl TokenSink for &mut LinkQueue {
     type Handle = ();
 
+    // <a href="link">some text</a>
     fn process_token(&mut self, token: Token,line_number: u64) -> match Token {
         TagToken(ref tag @ Tag {
             king: TagKind::StartTag,
