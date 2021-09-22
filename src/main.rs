@@ -95,6 +95,10 @@ async fn crawl(pages: Vec<Url>, current: u8, max: u8) -> CrawlResult {
         tasks.push(task);
     }
 
+    for task in tasks.into_iter() {
+        task.await?;
+    }
+
     Ok(())
 }
 
