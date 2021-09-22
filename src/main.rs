@@ -76,6 +76,12 @@ async fn crawl(pages: Vec<Url>, current: u8, max: u8) -> CrawlResult {
         println!("Reached Max Depth");
         return Ok(());
     }
+
+    let mut tasks = vec![]
+
+    println!("crawling: {:?}", pages);
+
+    Ok(())
 }
 
 fn main() {
