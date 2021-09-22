@@ -52,7 +52,7 @@ pub fn get_links(url: &Url, page: String) -> Vec<Url> {
     domain_url.set_query(None);
 
     let mut queue = LinkQueue::default();
-    let mut tokenizer = Tokenizer::new(&mut queue, TokenizerOpts:;default())
+    let mut tokenizer = Tokenizer::new(&mut queue, TokenizerOpts::default());
     let mut buffer = BufferQueue::new();
     buffer.push_back(page.into());
     let _ = tokenizer.feed(&mut buffer);
@@ -81,7 +81,7 @@ async fn crawl(pages: Vec<Url>, current: u8, max: u8) -> CrawlResult {
         return Ok(());
     }
 
-    let mut tasks = vec![]
+    let mut tasks = vec![];
 
     println!("crawling: {:?}", pages);
 
