@@ -44,7 +44,9 @@ impl TokenSink for &mut LinkQueue {
 }
 
 pub fn get_links(url: &Url, page: String) -> Vec<Url> {
-    
+    let mut domain_url = url.clone();
+    domain_url.set_path("");
+    domain_url.set_query(None);
 }
 
 fn main() {
