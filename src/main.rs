@@ -70,7 +70,12 @@ pub fn get_links(url: &Url, page: String) -> Vec<Url> {
 }
 
 async fn crawl(pages: Vec<Url>, current: u8, max: u8) -> CrawlResult {
-    
+    println!("Current Depth: {}, Max Depth: {}", current, max);
+
+    if current > max {
+        println!("Reached Max Depth");
+        return Ok(());
+    }
 }
 
 fn main() {
