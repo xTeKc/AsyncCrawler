@@ -8,7 +8,7 @@ use html5ever::tokenizer::{
     TokenSinkResult,
     Tokenizer,
     TokenizerOpts,
-}:
+};
 use std::borrow::Borrow;
 use url::{ParseError, Url};
 
@@ -16,7 +16,7 @@ use async_std::task;
 use surf;
 
 type CrawlResult = Result<(), Box<dyn std::error::Error + Send + Sync + 'static>>;
-type BoxFuture = std::pin:Pin<Box<dyn std::future::Future<Output = CrawlResult> + Send>>; 
+type BoxFuture = std::pin::Pin<Box<dyn std::future::Future<Output = CrawlResult> + Send>>; 
 
 #[derive(Default, Debug)]
 struct LinkQueue {
