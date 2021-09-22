@@ -108,5 +108,7 @@ async fn crawl(pages: Vec<Url>, current: u8, max: u8) -> CrawlResult {
 }
 
 fn main() {
-
+    task::block_on(async {
+        box_crawl(vec![Url::parse("https://www.rust-lang.org").unwrap()], 1, 2);
+    });
 }
