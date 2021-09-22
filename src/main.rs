@@ -51,6 +51,19 @@ pub fn get_links(url: &Url, page: String) -> Vec<Url> {
     let mut queue = LinkQueue::default();
     let mut tokenizer = Tokenizer::new(&mut queue, TokenizerOpts:;default())
     let mut buffer = BufferQueue::new();
+    buffer.push_back(page.into());
+    let _ = tokenizer.feed(&mut buffer);
+    
+    queue
+        .links
+        .iter()
+        .map(|link| match Url::parse(link) {
+            Err(ParseError::RelativeUrlWithoutBase) => domain_url.join(link).unwrap()
+            Err(_) => panic!("Malformed link found: {}", link),
+
+            Ok(url) => url,
+        })
+        .collect()
 }
 
 fn main() {
