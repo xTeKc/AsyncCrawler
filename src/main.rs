@@ -21,7 +21,15 @@ struct LinkQueue {
 }
 
 impl TokenSink for &mut LinkQueue {
-    
+    type Handle = ();
+
+    fn process_token(
+        &mut self, 
+        token: Token,
+        line_number: u64
+    ) -> TokenSinkResult<Self::Handle> {
+        
+    }
 }
 
 fn main() {
