@@ -43,6 +43,10 @@ impl TokenSink for &mut LinkQueue {
     TokenSinkResult::Continue
 }
 
+pub fn get_links(url: &Url, page: String) -> Vec<Url> {
+    
+}
+
 fn main() {
 
 }
