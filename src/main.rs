@@ -20,6 +20,9 @@ struct LinkQueue {
     links: Vec<String>,
 }
 
+impl TokenSink for &mut LinkQueue {
+    
+}
 
 fn main() {
 
