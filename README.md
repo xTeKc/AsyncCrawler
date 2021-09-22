@@ -1,8 +1,11 @@
-##Getting Started
+Getting Started
 -----------------
 
-**Clone the repo**
+```git clone```
 
 **Modify Url in main fn**
 
-**Cargo run**
+```cargo run```
+
+**Todo: <br>
+Add ability to input Url instead of hard coding.**
