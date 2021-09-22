@@ -10,10 +10,10 @@ use html5ever::tokenizer::{
     TokenizerOpts,
 }:
 use std::borrow::Borrow;
-use url::{
-    ParseError,
-    Url
-};
+use url::{ParseError, Url};
+
+use async_std::task;
+use surf;
 
 #[derive(Default, Debug)]
 struct LinkQueue {
