@@ -69,6 +69,10 @@ pub fn get_links(url: &Url, page: String) -> Vec<Url> {
         .collect()
 }
 
+async fn crawl(pages: Vec<Url>, current: u8, max: u8) -> CrawlResult {
+    
+}
+
 fn main() {
 
 }
