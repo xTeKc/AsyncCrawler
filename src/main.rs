@@ -92,6 +92,7 @@ async fn crawl(pages: Vec<Url>, current: u8, max: u8) -> CrawlResult {
             
             println!("Following: {:?}", links);
         });
+        tasks.push(task);
     }
 
     Ok(())
