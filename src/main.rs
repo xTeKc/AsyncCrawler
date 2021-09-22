@@ -30,7 +30,15 @@ impl TokenSink for &mut LinkQueue {
             ..
         },
     ) => {}
-    _ => {}
+        if tag.name.as_ref() == "a" {
+            for attributes in tag.attrs.iter() {
+                if attribute.name.local.as_ref() == "href" {
+                    let url_str: &[u8] = attribute.value.borrow();
+                    self.links
+                        .push(String::from_utf8_lossy(url_str).into_owned());
+                }
+            }
+        }
     }
     TokenSinkResult::Continue
 }
