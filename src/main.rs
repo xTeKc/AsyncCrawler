@@ -86,7 +86,11 @@ async fn crawl(pages: Vec<Url>, current: u8, max: u8) -> CrawlResult {
             println!("getting: {}", url);
 
             let mut res = surf::get(&url).await?;
+            let body = res.body_string().await?;
 
+            let links = get_links(&url, body);
+            
+            println!("Following: {}", links);
         });
     }
 
