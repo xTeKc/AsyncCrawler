@@ -81,6 +81,12 @@ async fn crawl(pages: Vec<Url>, current: u8, max: u8) -> CrawlResult {
 
     println!("crawling: {:?}", pages);
 
+    for url in pages {
+        let task = task::spawn(async move {
+
+        });
+    }
+
     Ok(())
 }
 
