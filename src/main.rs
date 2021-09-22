@@ -83,6 +83,9 @@ async fn crawl(pages: Vec<Url>, current: u8, max: u8) -> CrawlResult {
 
     for url in pages {
         let task = task::spawn(async move {
+            println!("getting: {}", url);
+
+            let mut res = surf::get(&url).await?;
 
         });
     }
