@@ -90,7 +90,7 @@ async fn crawl(pages: Vec<Url>, current: u8, max: u8) -> CrawlResult {
 
             let links = get_links(&url, body);
             
-            println!("Following: {}", links);
+            println!("Following: {:?}", links);
         });
     }
 
