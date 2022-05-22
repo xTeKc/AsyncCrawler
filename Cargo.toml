@@ -6,6 +6,12 @@ edition = "2021"
 
 [dependencies]
 async-std = "1.10.0"
+clap = "2.33"
 surf = "2.3.1"
 html5ever = "0.25.1"
 url = "2.2.2"
+
+[dev-dependencies]
+assert_cmd = "2"
+predicates = "2"
+rand = "0.8"
